@@ -9,23 +9,10 @@
 import UIKit
 import SnapKit
 
-class Post {
-    var name: String?
-    var statusText: String?
-    var profileImage: String?
-    var statusImage: String?
-    
-//    init(name: String, statusText: String) {
-//        self.name = name
-//        self.statusText = statusText
-//
-//    }
-}
-
 let cellId = "cell"
 class feedMainViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    var posts = [Post]()
+    private var posts = [Post]()
     
     
 //    var layout: UICollectionViewFlowLayout = {
@@ -62,7 +49,7 @@ class feedMainViewController: UICollectionViewController, UICollectionViewDelega
         posts.append(postJob)
 
     }
-    
+    //MARK:collectionView Setup
     func collectionViewSetup() {
         collectionView.backgroundColor = .white
         collectionView.register(feedCell.self, forCellWithReuseIdentifier: cellId)
@@ -71,6 +58,7 @@ class feedMainViewController: UICollectionViewController, UICollectionViewDelega
         //collectionView.collectionViewLayout = layout
     }
     
+    //MARK: Navigation
     func navigationSetup() {
         navigationController?.navigationBar.barTintColor = UIColor(red: 51/255, green: 90/255, blue: 149/255, alpha: 1)
         navigationController?.navigationBar.topItem?.title = "MinjaeBook"
@@ -79,6 +67,8 @@ class feedMainViewController: UICollectionViewController, UICollectionViewDelega
     }
     
     
+    
+    //MARK: collectionView DataSource / Delegate
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return posts.count
     }

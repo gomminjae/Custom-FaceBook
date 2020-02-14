@@ -53,7 +53,7 @@ class feedCell: UICollectionViewCell {
         super.init(frame: frame)
         setupViews()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init error")
     }
@@ -70,6 +70,7 @@ class feedCell: UICollectionViewCell {
         dividerLineView.addSubview(likeButton)
         dividerLineView.addSubview(commentButton)
         dividerLineView.addSubview(shareButton)
+        likeButton.addTarget(self, action: #selector(btnclicked), for: .touchUpInside)
         
         nameLabel.snp.makeConstraints { (make) in
             make.leading.equalTo(75)
@@ -109,19 +110,19 @@ class feedCell: UICollectionViewCell {
         }
         likeButton.snp.makeConstraints { (make) in
             make.leading.equalTo(0)
-            make.top.equalTo(5)
+            make.top.equalTo(2)
             make.width.equalTo(125)
             make.height.equalTo(dividerLineView.snp.height)
         }
         commentButton.snp.makeConstraints { (make) in
             make.leading.equalTo(likeButton.snp.trailing)
-            make.top.equalTo(5)
+            make.top.equalTo(2)
             make.width.equalTo(125)
             make.height.equalTo(dividerLineView.snp.height)
         }
         shareButton.snp.makeConstraints { (make) in
             make.leading.equalTo(commentButton.snp.trailing)
-            make.top.equalTo(5)
+            make.top.equalTo(2)
             make.width.equalTo(125)
             make.height.equalTo(dividerLineView.snp.height)
         }
@@ -221,5 +222,20 @@ class feedCell: UICollectionViewCell {
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         return button
     }()
+    
+    
+    //MARK: Button Action
+    @objc func btnclicked(sender: UIButton) {
+        if sender == likeButton {
+        sender.tintColor = UIColor.blue
+        //sender.backgroundColor = .orange
+        }
+        else if sender == commentButton {
+            let alert = UIAlertController(title: "ex", message: "Write your opinion", preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "cancel", style: .cancel, handler: nil))
+            
+        }
+    }
     
 }
