@@ -31,6 +31,9 @@ class CustomTabBarViewController: UITabBarController {
         
         let messengerController = UINavigationController(rootViewController: messengerViewController())
         
+        let myProfileController = UINavigationController(rootViewController: myProfileViewController())
+        
+        
         navigationController.title = "News Feed"
         navigationController.tabBarItem.image = UIImage(named: "newsfeed")
         
@@ -40,8 +43,11 @@ class CustomTabBarViewController: UITabBarController {
         messengerController.title = "Messenger"
         messengerController.tabBarItem.image = UIImage(named: "messenger")
         
+        myProfileController.title = "Profile"
+        myProfileController.tabBarItem.image = UIImage(named: "myProfile")
         
-        viewControllers = [navigationController,friendRequestController, messengerController]
+        
+        viewControllers = [navigationController,friendRequestController, messengerController,myProfileController]
         
     }
 

@@ -17,6 +17,8 @@
 		04D11D7A23F52FD60055D1CA /* friendRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D11D7923F52FD60055D1CA /* friendRequestViewController.swift */; };
 		04D11D7E23F53A790055D1CA /* friendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D11D7D23F53A790055D1CA /* friendRequest.swift */; };
 		04D11D8023F53F5E0055D1CA /* messengerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D11D7F23F53F5E0055D1CA /* messengerViewController.swift */; };
+		04E8595C23F7B27D00E999A7 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8595B23F7B27D00E999A7 /* Requests.swift */; };
+		04E8595E23F7BFA500E999A7 /* myProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E8595D23F7BFA500E999A7 /* myProfileViewController.swift */; };
 		04FD037223F65D6300B82041 /*  Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FD037123F65D6300B82041 /*  Post.swift */; };
 		2E9364FF3D299508E603AAAB /* Pods_FaceBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CE5D50E958F6BEB1C652AA3 /* Pods_FaceBookUI.framework */; };
 /* End PBXBuildFile section */
@@ -34,6 +36,8 @@
 		04D11D7923F52FD60055D1CA /* friendRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = friendRequestViewController.swift; sourceTree = "<group>"; };
 		04D11D7D23F53A790055D1CA /* friendRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = friendRequest.swift; sourceTree = "<group>"; };
 		04D11D7F23F53F5E0055D1CA /* messengerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messengerViewController.swift; sourceTree = "<group>"; };
+		04E8595B23F7B27D00E999A7 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
+		04E8595D23F7BFA500E999A7 /* myProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myProfileViewController.swift; sourceTree = "<group>"; };
 		04FD037123F65D6300B82041 /*  Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " Post.swift"; sourceTree = "<group>"; };
 		3BB6883309461EACF4EDBD6C /* Pods-FaceBookUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceBookUI.release.xcconfig"; path = "Target Support Files/Pods-FaceBookUI/Pods-FaceBookUI.release.xcconfig"; sourceTree = "<group>"; };
 		8CE5D50E958F6BEB1C652AA3 /* Pods_FaceBookUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FaceBookUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +96,7 @@
 				04CFA87623F11F470082E614 /* feedMainViewController.swift */,
 				04D11D7923F52FD60055D1CA /* friendRequestViewController.swift */,
 				04D11D7F23F53F5E0055D1CA /* messengerViewController.swift */,
+				04E8595D23F7BFA500E999A7 /* myProfileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -99,8 +104,8 @@
 		04D11D7C23F531710055D1CA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				04CFA87823F124F40082E614 /* feedCell.swift */,
 				04D11D7D23F53A790055D1CA /* friendRequest.swift */,
+				04CFA87823F124F40082E614 /* feedCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -109,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				04FD037123F65D6300B82041 /*  Post.swift */,
+				04E8595B23F7B27D00E999A7 /* Requests.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -244,9 +250,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04E8595E23F7BFA500E999A7 /* myProfileViewController.swift in Sources */,
 				04D11D8023F53F5E0055D1CA /* messengerViewController.swift in Sources */,
 				04FD037223F65D6300B82041 /*  Post.swift in Sources */,
 				04CFA86323F11E910082E614 /* AppDelegate.swift in Sources */,
+				04E8595C23F7B27D00E999A7 /* Requests.swift in Sources */,
 				04D11D7623F52A620055D1CA /* CustomTabBarViewController.swift in Sources */,
 				04CFA87923F124F40082E614 /* feedCell.swift in Sources */,
 				04D11D7A23F52FD60055D1CA /* friendRequestViewController.swift in Sources */,

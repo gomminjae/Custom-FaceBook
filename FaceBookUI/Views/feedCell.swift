@@ -75,9 +75,9 @@ class feedCell: UICollectionViewCell {
         nameLabel.snp.makeConstraints { (make) in
             make.leading.equalTo(75)
             make.centerY.equalTo(40)
-            make.top.equalTo(1)
-            make.height.equalTo(40
-            )
+            make.top.equalTo(profileImage.snp.top)
+            make.height.equalTo(40)
+            make.bottom.equalTo(profileImage.snp.bottom).offset(-10)
            
         }
         profileImage.snp.makeConstraints { (make) in
@@ -132,29 +132,11 @@ class feedCell: UICollectionViewCell {
      lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 2
-        let nameAttribute = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]
-        
-        let subAttribute = [NSAttributedString.Key.foregroundColor: UIColor.lightGray, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12)]
-        
-        let name = NSMutableAttributedString(string: "Simple Name\n", attributes: nameAttribute)
-        let subName = NSMutableAttributedString(string: "sanpransisco -> data", attributes: subAttribute)
-        
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 2
-        
-        subName.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, name.string.count))
-        
-        var nameText = NSMutableAttributedString()
-        nameText.append(name)
-        nameText.append(subName)
-        label.attributedText = nameText
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     lazy var profileImage: UIImageView = {
         let img = UIImageView()
-        img.translatesAutoresizingMaskIntoConstraints = false
         img.image = UIImage(named: "mark")
         img.contentMode = .scaleToFill
         img.backgroundColor = .clear
@@ -227,8 +209,8 @@ class feedCell: UICollectionViewCell {
     //MARK: Button Action
     @objc func btnclicked(sender: UIButton) {
         if sender == likeButton {
-        sender.tintColor = UIColor.blue
-        //sender.backgroundColor = .orange
+        sender.tintColor = UIColor.white
+        sender.backgroundColor = .blue
         }
         else if sender == commentButton {
             let alert = UIAlertController(title: "ex", message: "Write your opinion", preferredStyle: .actionSheet)

@@ -8,24 +8,9 @@
 
 import UIKit
 
-class Friend {
-    var profileImage: String?
-    var name: String?
-}
-
-class Recommend {
-    var profileImage: String?
-    var name: String?
-}
-
-
-
-
-
 class friendRequestViewController: UITableViewController {
     
-    static let cellId = "cellId"
-    static let headerId = "headerId"
+    let cellId = "cellId"
     
     private var requests = [Friend]()
     private var recommends = [Recommend]()
@@ -36,6 +21,8 @@ class friendRequestViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
         navigationSetup()
         tableViewSetup()
         
@@ -43,12 +30,18 @@ class friendRequestViewController: UITableViewController {
         mark.name = "mark"
         mark.profileImage = "mark"
         
-        let mark2 = Recommend()
-        mark.name = "mark"
-        mark.profileImage = "mark"
+        let mark2 = Recommend(name: "mark", profileImage: "mark")
+        let jimin = Recommend(name: "jimin", profileImage: "jimin")
+        let steve = Recommend(name: "Steve Jobs", profileImage: "steve")
+        let moon = Recommend(name: "moonchaewon", profileImage: "moon")
+        
+        
         
         requests.append(mark)
         recommends.append(mark2)
+        recommends.append(steve)
+        recommends.append(jimin)
+        recommends.append(moon)
         
         // Do any additional setup after loading the view.
     }
@@ -60,29 +53,26 @@ class friendRequestViewController: UITableViewController {
       }
     
     func tableViewSetup() {
-        tableView.register(friendRequest.self, forCellReuseIdentifier: friendRequestViewController.cellId)
-        tableView.dataSource = self
-        tableView.delegate = self
+        tableView.backgroundColor = UIColor(white: 0.95, alpha: 1)
+        tableView.register(friendRequest.self, forCellReuseIdentifier: cellId)
         tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return requests.count
-        }
-        else if section == 1 {
+        if section == 1 {
             return recommends.count
-        }else { return 0 }
+        }else { return requests.count }
+       
+        
+        //return 50
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: friendRequestViewController.cellId, for: indexPath) as? friendRequest else { return UITableViewCell() }
-        if indexPath.section == 0 {
-            cell.friend = requests[indexPath.row]
-        }
-        else if indexPath.section == 1 {
-            cell.recommend = recommends[indexPath.row]
-        }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? friendRequest else { return UITableViewCell() }
+        
+        if indexPath.section == 1 {
+            cell.recommend = recommends[indexPath.item]
+        }else { cell.friend = requests[indexPath.item] }
         
         return cell
     }
@@ -93,8 +83,9 @@ class friendRequestViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sections[section]
     }
-      
     
-
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
    
 }
