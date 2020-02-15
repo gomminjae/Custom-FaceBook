@@ -11,6 +11,8 @@ import SnapKit
 
 class feedCell: UICollectionViewCell {
     
+    static var isChecked = false
+    
     var post: Post? {
         didSet {
             if let name = post?.name {
@@ -19,7 +21,7 @@ class feedCell: UICollectionViewCell {
                 let subAttribute = [NSAttributedString.Key.foregroundColor: UIColor.lightGray, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12)]
                 
                 let name = NSMutableAttributedString(string: name, attributes: nameAttribute)
-                let subName = NSMutableAttributedString(string: "\nsanpransisco -> data", attributes: subAttribute)
+                let subName = NSMutableAttributedString(string: "\nsanfransisco -> Data", attributes: subAttribute)
                 
                 let paragraphStyle = NSMutableParagraphStyle()
                 paragraphStyle.lineSpacing = 2
@@ -208,15 +210,25 @@ class feedCell: UICollectionViewCell {
     
     //MARK: Button Action
     @objc func btnclicked(sender: UIButton) {
-        if sender == likeButton {
-        sender.tintColor = UIColor.white
-        sender.backgroundColor = .blue
+        if sender == likeButton
+        {
+            if sender.isSelected {
+                sender.isSelected = false
+                sender.setTitleColor(.blue, for: .normal)
+                sender.backgroundColor = .white
+                sender.layer.borderColor = UIColor.blue.cgColor
+            }else {
+                sender.isSelected = true
+                sender.setTitleColor(UIColor(red: 143/255 ,green: 150/255, blue: 163/255, alpha: 1), for: .normal)
+                sender.layer.borderColor = UIColor.black.cgColor
+                sender.backgroundColor = #colorLiteral(red: 0.9678019236, green: 0.9678019236, blue: 0.9678019236, alpha: 1)
+            }
+
         }
         else if sender == commentButton {
             let alert = UIAlertController(title: "ex", message: "Write your opinion", preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
             alert.addAction(UIAlertAction(title: "cancel", style: .cancel, handler: nil))
-            
         }
     }
     

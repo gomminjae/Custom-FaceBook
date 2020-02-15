@@ -50,6 +50,7 @@ class friendRequest: UITableViewCell {
         addSubview(profileImage)
         addSubview(acceptButton)
         addSubview(cancelButton)
+        acceptButton.addTarget(self, action: #selector(confirmClicked), for: .touchUpInside)
         profileView.snp.makeConstraints { (make) in
             make.leading.equalTo(5)
             make.trailing.equalTo(5)
@@ -106,7 +107,7 @@ class friendRequest: UITableViewCell {
     }()
     lazy var acceptButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Confirm", for: .normal)
+        //button.setTitle("Confirm", for: .normal)
         button.layer.cornerRadius = 8
         button.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
         button.tintColor = .white
@@ -125,4 +126,18 @@ class friendRequest: UITableViewCell {
         //button.backgroundColor = .black
         return button
     }()
+    
+    @objc func confirmClicked(sender: UIButton) {
+        if sender == acceptButton {
+            
+            if sender.isSelected {
+                sender.isSelected = false
+                sender.backgroundColor = .lightGray
+                sender.setTitleColor(.white, for: .normal)
+            }else {
+                sender.isSelected = true
+                sender.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+            }
+        }
+    }
 }

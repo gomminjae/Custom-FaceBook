@@ -72,7 +72,15 @@ class friendRequestViewController: UITableViewController {
         
         if indexPath.section == 1 {
             cell.recommend = recommends[indexPath.item]
-        }else { cell.friend = requests[indexPath.item] }
+            cell.acceptButton.setTitle("Request", for: .normal)
+            if cell.acceptButton.isTouchInside{
+                requests.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .none)
+                tableView.reloadData()
+            }
+        }else { cell.friend = requests[indexPath.item]
+            cell.acceptButton.setTitle("Confirm", for: .normal)
+        }
         
         return cell
     }
