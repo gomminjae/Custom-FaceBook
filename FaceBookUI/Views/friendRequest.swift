@@ -41,6 +41,7 @@ class friendRequest: UITableViewCell {
 
 
     required init?(coder: NSCoder) {
+        print("friend init")
         fatalError("error tableView")
     }
     
@@ -141,3 +142,4 @@ class friendRequest: UITableViewCell {
         }
     }
 }
+

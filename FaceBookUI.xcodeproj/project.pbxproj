@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		049CC96223FA93EE0041D583 /* messengerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CC96123FA93EE0041D583 /* messengerCell.swift */; };
 		04CFA86323F11E910082E614 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CFA86223F11E910082E614 /* AppDelegate.swift */; };
 		04CFA86523F11E910082E614 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CFA86423F11E910082E614 /* SceneDelegate.swift */; };
 		04CFA86C23F11E940082E614 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04CFA86B23F11E940082E614 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		049CC96123FA93EE0041D583 /* messengerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messengerCell.swift; sourceTree = "<group>"; };
 		04CFA85F23F11E910082E614 /* FaceBookUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceBookUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04CFA86223F11E910082E614 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04CFA86423F11E910082E614 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			children = (
 				04D11D7D23F53A790055D1CA /* friendRequest.swift */,
 				04CFA87823F124F40082E614 /* feedCell.swift */,
+				049CC96123FA93EE0041D583 /* messengerCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				04E8595C23F7B27D00E999A7 /* Requests.swift in Sources */,
 				04D11D7623F52A620055D1CA /* CustomTabBarViewController.swift in Sources */,
 				04CFA87923F124F40082E614 /* feedCell.swift in Sources */,
+				049CC96223FA93EE0041D583 /* messengerCell.swift in Sources */,
 				04D11D7A23F52FD60055D1CA /* friendRequestViewController.swift in Sources */,
 				04D11D7E23F53A790055D1CA /* friendRequest.swift in Sources */,
 				04CFA87723F11F470082E614 /* feedMainViewController.swift in Sources */,

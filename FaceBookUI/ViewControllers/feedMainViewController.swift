@@ -63,8 +63,13 @@ class feedMainViewController: UICollectionViewController, UICollectionViewDelega
         navigationController?.navigationBar.barTintColor = UIColor(red: 51/255, green: 90/255, blue: 149/255, alpha: 1)
         navigationController?.navigationBar.topItem?.title = "MinjaeBook"
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
-        //navigationController?.navigationItem.rightBarButtonItem?.title = "More"
+        navigationController?.navigationItem.leftBarButtonItem?.title = "Back"
     }
+    
+    lazy var leftBarButton: UIButton = {
+        let button = UIButton()
+        return button
+    }()
     
     
     
@@ -79,6 +84,7 @@ class feedMainViewController: UICollectionViewController, UICollectionViewDelega
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? feedCell else { return UICollectionViewCell() }
         cell.post = posts[indexPath.item]
         cell.statusTextView.delegate = self
+       
         return cell
         
     }

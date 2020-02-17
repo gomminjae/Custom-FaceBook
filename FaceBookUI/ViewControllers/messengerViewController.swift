@@ -15,6 +15,8 @@ class messengerViewController: UIViewController {
         super.viewDidLoad()
         navigationSetup()
         view.addSubview(mainView)
+        mainView.dataSource = self
+        mainView.delegate = self
         layoutSetup()
 
         // Do any additional setup after loading the view.
@@ -22,7 +24,7 @@ class messengerViewController: UIViewController {
     
     func navigationSetup() {
              navigationController?.navigationBar.barTintColor = UIColor(red: 51/255, green: 90/255, blue: 149/255, alpha: 1)
-             navigationController?.navigationBar.topItem?.title = "MinjaeBook"
+             navigationController?.navigationBar.topItem?.title = "Messenger"
              navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
     }
     
@@ -33,8 +35,8 @@ class messengerViewController: UIViewController {
         }
     }
     
-    lazy var mainView: UIView = {
-        let view = UIView()
+    lazy var mainView: UITableView = {
+        let view = UITableView()
         
         return view
     }()
@@ -42,4 +44,16 @@ class messengerViewController: UIViewController {
     
 
 
+}
+
+extension messengerViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        
+        return cell
+    }
 }
