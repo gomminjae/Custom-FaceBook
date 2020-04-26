@@ -31,7 +31,7 @@ class CustomTabBarViewController: UITabBarController {
         
         let messengerController = UINavigationController(rootViewController: messengerViewController())
         
-        let myProfileController = UINavigationController(rootViewController: myProfileViewController())
+        let myProfileController = myProfileViewController()
         
         
         navigationController.title = "News Feed"

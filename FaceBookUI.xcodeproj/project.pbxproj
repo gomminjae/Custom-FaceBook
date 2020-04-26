@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		049A5E612440C04D009A89DD /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049A5E602440C04D009A89DD /* ProfileHeader.swift */; };
 		049CC96223FA93EE0041D583 /* messengerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CC96123FA93EE0041D583 /* messengerCell.swift */; };
+		04AB74FA24530B6100DEEBAE /* headerView .swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AB74F924530B6100DEEBAE /* headerView .swift */; };
+		04C71E1B2455578600EF8B4F /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C71E1A2455578600EF8B4F /* Extension.swift */; };
 		04CFA86323F11E910082E614 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CFA86223F11E910082E614 /* AppDelegate.swift */; };
 		04CFA86523F11E910082E614 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CFA86423F11E910082E614 /* SceneDelegate.swift */; };
 		04CFA86C23F11E940082E614 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04CFA86B23F11E940082E614 /* Assets.xcassets */; };
@@ -25,7 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		049A5E602440C04D009A89DD /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		049CC96123FA93EE0041D583 /* messengerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messengerCell.swift; sourceTree = "<group>"; };
+		04AB74F924530B6100DEEBAE /* headerView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "headerView .swift"; sourceTree = "<group>"; };
+		04C71E1A2455578600EF8B4F /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		04CFA85F23F11E910082E614 /* FaceBookUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceBookUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04CFA86223F11E910082E614 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04CFA86423F11E910082E614 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +64,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04C71E192455577300EF8B4F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				04C71E1A2455578600EF8B4F /* Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		04CFA85623F11E910082E614 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +93,7 @@
 		04CFA86123F11E910082E614 /* FaceBookUI */ = {
 			isa = PBXGroup;
 			children = (
+				04C71E192455577300EF8B4F /* Extension */,
 				04FD037023F65D4500B82041 /* Model */,
 				04D11D7C23F531710055D1CA /* Views */,
 				04D11D7B23F531470055D1CA /* ViewControllers */,
@@ -109,6 +124,8 @@
 				04D11D7D23F53A790055D1CA /* friendRequest.swift */,
 				04CFA87823F124F40082E614 /* feedCell.swift */,
 				049CC96123FA93EE0041D583 /* messengerCell.swift */,
+				049A5E602440C04D009A89DD /* ProfileHeader.swift */,
+				04AB74F924530B6100DEEBAE /* headerView .swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -255,15 +272,18 @@
 			files = (
 				04E8595E23F7BFA500E999A7 /* myProfileViewController.swift in Sources */,
 				04D11D8023F53F5E0055D1CA /* messengerViewController.swift in Sources */,
+				04AB74FA24530B6100DEEBAE /* headerView .swift in Sources */,
 				04FD037223F65D6300B82041 /*  Post.swift in Sources */,
 				04CFA86323F11E910082E614 /* AppDelegate.swift in Sources */,
 				04E8595C23F7B27D00E999A7 /* Requests.swift in Sources */,
+				049A5E612440C04D009A89DD /* ProfileHeader.swift in Sources */,
 				04D11D7623F52A620055D1CA /* CustomTabBarViewController.swift in Sources */,
 				04CFA87923F124F40082E614 /* feedCell.swift in Sources */,
 				049CC96223FA93EE0041D583 /* messengerCell.swift in Sources */,
 				04D11D7A23F52FD60055D1CA /* friendRequestViewController.swift in Sources */,
 				04D11D7E23F53A790055D1CA /* friendRequest.swift in Sources */,
 				04CFA87723F11F470082E614 /* feedMainViewController.swift in Sources */,
+				04C71E1B2455578600EF8B4F /* Extension.swift in Sources */,
 				04CFA86523F11E910082E614 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,7 +352,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -386,7 +406,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -401,7 +421,9 @@
 			baseConfigurationReference = 9B0B909E30CECF0B919DCD81 /* Pods-FaceBookUI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AU24ZRJ649;
 				INFOPLIST_FILE = FaceBookUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -409,8 +431,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = gomminjae.FaceBookUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -419,7 +442,9 @@
 			baseConfigurationReference = 3BB6883309461EACF4EDBD6C /* Pods-FaceBookUI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AU24ZRJ649;
 				INFOPLIST_FILE = FaceBookUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -427,8 +452,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = gomminjae.FaceBookUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

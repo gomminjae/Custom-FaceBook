@@ -31,7 +31,7 @@ class messengerViewController: UIViewController {
     private func layoutSetup() {
         mainView.snp.makeConstraints { (make) in
             make.leading.trailing.equalTo(0)
-            make.top.bottom.equalTo(0)
+            make.top.bottom.equalTo(60)
         }
     }
     
@@ -40,7 +40,6 @@ class messengerViewController: UIViewController {
         
         return view
     }()
-         
     
 
 

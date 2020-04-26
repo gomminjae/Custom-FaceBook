@@ -22,13 +22,38 @@ class messengerCell: UITableViewCell {
     
     func setupView() {
         addSubview(nameLabel)
+        
+        nameLabel.snp.makeConstraints { (make) in
+            make.leading.equalTo(5)
+        }
     }
     
     
     lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.text = "test"
+        label.numberOfLines = 2
+        
+        let nameAttribute = [NSAttributedString.Key.foregroundColor: UIColor.black,
+                             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]
+        let mayYouknowAttribute = [NSAttributedString.Key.foregroundColor:UIColor.lightGray,
+                                   NSMutableAttributedString.Key.font: UIFont.systemFont(ofSize: 12)]
+        let name = NSMutableAttributedString(string: "minjae", attributes: nameAttribute)
+        
+        let subTitle = NSMutableAttributedString(string: "89People you know", attributes: mayYouknowAttribute)
+        let nameText = NSMutableAttributedString()
+        nameText.append(name)
+        nameText.append(subTitle)
+        
+        
+        label.attributedText = nameText
         return label
+    }()
+    
+    lazy var profileImage: UIImageView = {
+        let image = UIImageView()
+        
+        return image
     }()
     
 

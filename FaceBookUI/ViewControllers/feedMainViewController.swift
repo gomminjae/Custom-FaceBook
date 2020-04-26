@@ -98,7 +98,7 @@ class feedMainViewController: UICollectionViewController, UICollectionViewDelega
             return CGSize(width: view.frame.width, height: rect.height + knownHeight)
         }
         
-        return CGSize(width: view.frame.width, height: 500)
+        return CGSize(width: view.frame.width, height: 550)
         
     }
     
