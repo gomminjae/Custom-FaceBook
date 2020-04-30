@@ -21,5 +21,7 @@ class Recommend {
         self.name = name
         self.profileImage = profileImage
     }
+    
+    
 }
 

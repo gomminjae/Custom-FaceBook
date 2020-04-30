@@ -11,13 +11,6 @@ import SnapKit
 
 class myProfileViewController: UIViewController {
     
-    let collectionView: UICollectionView = {
-        let flowLayout = UICollectionViewFlowLayout()
-        let view = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-        view.backgroundColor = .orange
-        return view
-    }()
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,12 +23,11 @@ class myProfileViewController: UIViewController {
         view.addSubview(backgroundImageView)
         view.addSubview(myProfileView)
         view.addSubview(nameLabel)
-        view.addSubview(collectionView)
         view.addSubview(friendButton)
         view.addSubview(newsFeed)
         view.addSubview(activityLog)
         view.addSubview(moreButton)
-        collectionView.register(feedCell.self, forCellWithReuseIdentifier: "cell")
+        view.addSubview(profileInfoView)
         myProfileView.makeToCircle()
     }
     
@@ -44,8 +36,7 @@ class myProfileViewController: UIViewController {
     fileprivate func setupConstraits() {
         backgroundImageView.snp.makeConstraints {
             $0.top.equalTo(0)
-            $0.bottom.equalTo(view.frame.height).inset(550)
-            //$0.height.equalTo(300)
+            $0.height.equalTo(view.frame.height / 3).offset(60)
             $0.leading.trailing.equalTo(0)
         }
         
@@ -60,10 +51,6 @@ class myProfileViewController: UIViewController {
             $0.leading.equalTo(myProfileView.snp.leading)
             $0.center.equalTo(self.view)
             
-        }
-        collectionView.snp.makeConstraints {
-            $0.top.equalTo(backgroundImageView.snp.bottom)
-            $0.leading.trailing.equalTo(0)
         }
         friendButton.snp.makeConstraints {
             $0.top.equalTo(nameLabel.snp.bottom).offset(10)
@@ -81,10 +68,14 @@ class myProfileViewController: UIViewController {
             $0.top.equalTo(friendButton.snp.top)
             $0.leading.equalTo(activityLog.snp.trailing).offset(10)
         }
+        
+        profileInfoView.snp.makeConstraints {
+            $0.top.equalTo(friendButton.snp.bottom).offset(30)
+            $0.leading.trailing.equalTo(0)
+            $0.height.equalTo(400)
+        }
 
     }
-    
-    
     let backgroundImageView: UIImageView = {
         let view = UIImageView()
         view.backgroundColor = .lightGray
@@ -139,8 +130,15 @@ class myProfileViewController: UIViewController {
         button.setTitle("More", for: .normal)
         button.setImage(UIImage(named: "more"), for: .normal)
         button.setTitleColor(.black, for: .normal)
-       button.alignTextUnderImage(spacing: 6.0)
+        button.alignTextUnderImage(spacing: 6.0)
+        //button.backgroundColor = .lightGray
         return button
+    }()
+    
+    let profileInfoView: UITextView = {
+        let view = UITextView()
+        view.backgroundColor = .lightGray
+        return view
     }()
 
 }
