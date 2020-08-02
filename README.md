@@ -1,4 +1,5 @@
 # Custom-FaceBook
+![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg)
 ## Facebook UI clone project
 __Basic Ios UI Study without storyboard__
 ## 구성
